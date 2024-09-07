@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Navigation Menu</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        margin-top: 10vh;
+      }
+      section {
+        padding: 100px;
+        height: 60vh;
+        text-align: center;
+      }
+      nav {
+        background-color: pink;
+        position: fixed;
+        height: 8vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: background-color 0.3s ease;
+        z-index: 1000;
+        border-bottom: 2px solid black;
+      }
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 20px;
+        margin-top: 1.6vh;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        display: block;
+        transition: color 0.3s ease, background-color 0.3s ease;
+        border-radius: 5px;
+      }
+      nav ul li a:hover {
+        background-color: white;
+        color: #333;
+      }
+      .scrolled {
+        background-color: #333;
+      }
+      .scrolled a {
+        color: white;
+      }
+      #Page-1 {
+        background-color: lightblue;
+        border-bottom: 2px solid grey;
+      }
+      #Page-2 {
+        background-color: lightgreen;
+        border-bottom: 2px solid grey;
+      }
+      #Page-3 {
+        background-color: lightcoral;
+        border-bottom: 2px solid grey;
+      }
+      #Page-4 {
+        background-color: lightgoldenrodyellow;
+        border-bottom: 2px solid grey;
+      }
+      @media screen and (min-width: 1025px) {
+        nav ul li {
+          margin: 0 30px;
+        }
+        nav ul li a {
+          font-size: 1.2rem;
+        }
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        nav ul {
+          justify-content: space-between;
+          padding: 0 10px;
+        }
+        nav ul li a {
+          font-size: 1rem;
+        }
+        nav ul li {
+          margin: 0 10px;
+        }
+        section {
+          padding: 50px;
+        }
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        nav ul {
+          flex-direction: row;
+          height: auto;
+          padding: 2px;
+        }
+        nav ul li {
+          margin: 0;
+        }
+        nav ul li a {
+          font-size: 0.4cm;
+        }
+        section {
+          padding: 40px 20px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <ul>
+        <li style="color: rgb(98, 91, 91); margin-top: 1.8vh; font-family: 'Times New Roman', Times, serif; font-weight: 900; font-size: 0.8cm; margin-left: -10cm;">
+          GANESH
+        </li>
+        <li style="margin-left: 8cm;"><a href="#Page-1">Page-1</a></li>
+        <li><a href="#Page-2">Page-2</a></li>
+        <li><a href="#Page-3">Page-3</a></li>
+        <li><a href="#Page-4">Page-4</a></li>
+      </ul>
+    </nav>
+    <section id="Page-1">
+      <h1>Page-1</h1>
+      <p>Scroll down to see the interactive navbar in action.</p>
+    </section>
+
+    <section id="Page-2">
+      <h1>Page-2</h1>
+      <p>Now we can see the change in Nav-bar background-color.</p>
+    </section>
+
+    <section id="Page-3">
+      <h1>Page-3</h1>
+      <p>Scroll down to see the interactive navbar in action.</p>
+    </section>
+
+    <section id="Page-4">
+      <h1>Page-4</h1>
+      <p>Scroll down to see the interactive navbar in action.</p>
+    </section>
+
+    <script>
+      window.onscroll = function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      };
+    </script>
+  </body>
+</html>
